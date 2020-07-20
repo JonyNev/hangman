@@ -2,7 +2,7 @@
 
 picture1= ("x-------x")
 
-picture2=("""     x
+picture2=("""    x
      |
      |
      |
@@ -10,21 +10,21 @@ picture2=("""     x
      | 
  x---x---x """)
 
-picture3 = ("""      x----x
+picture3 = ("""     x----x
       |
       |
       |
       |
       | 
  x----x-----x """)
-picture4 = ("""      x----x
+picture4 = ("""     x----x
       |    |
       |    
       |    
       |    
       | 
  x----x-----x """)
-picture5 = ("""      x----x
+picture5 = ("""     x----x
       |    |
       |    O
       |    
@@ -32,14 +32,14 @@ picture5 = ("""      x----x
       | 
  x----x-----x """)
 
-picture6 = ("""      x----x
+picture6 = ("""     x----x
       |    |
       |    O
       |   -|-
       |    
       | 
  x----x-----x """)
-picture7 = ("""      x----x
+picture7 = ("""     x----x
       |    |   
       |    O   
       |   -|-  
@@ -101,7 +101,7 @@ for w in range(len(List_String)):
 print(answer,"\n\n\n\n\n\n\n\n\n\n\n\n\n\n player 2: \n  ",bord)
 
 count = 0
-while (answer.count(",")!=0) and count<10:
+while (answer.count(",")!=0) and count<7:
     gess = ''
     while(len(gess) != 1 or gess == ' '):  
         gess = str(input("gess a leter : " ))
@@ -139,7 +139,7 @@ while (answer.count(",")!=0) and count<10:
             wrong = wrong + gess
             count = count + 1
             print_pic(count)
-            print ("\n\n\nwrong answer:",pic,wrong)  
+            print ("\n\n\nwrong answer:\n",pic,wrong)  
 
 if (answer.count(",")==0):
     print ("well done \n numbers of wrong answer:",count)   
