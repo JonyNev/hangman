@@ -1,7 +1,7 @@
 # hangman
-
+print("  _    _                                         \n | |  | |                                        \n | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __  \n |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ \n | |  | | (_| | | | | (_| | | | | | | (_| | | | |\n |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|\n                      __/ |                      \n                     |___/")
 String = ''
-print("welcome to the hang man game \n \nplayer 1: ")
+print("welcome to the hangman game \n \nplayer 1: ")
 while (String == '') or (String.count(" ") == len(String)):
      String = str(input("choose words: "))
 String = String.lower()
@@ -62,7 +62,7 @@ while (answer.count(",")!=0) and count<10:
 
     else:
         if gess in wrong:
-            print ("\nyou have alrady tried this leter:\n",wrong)  
+            print ("\ntry harder!\n",wrong)  
         else:
             gess = tuple(gess)
             wrong = wrong + gess
