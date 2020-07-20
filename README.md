@@ -1,5 +1,76 @@
 # hangman
-print("  _    _                                         \n | |  | |                                        \n | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __  \n |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ \n | |  | | (_| | | | | (_| | | | | | | (_| | | | |\n |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|\n                      __/ |                      \n                     |___/")
+
+picture1= ("x-------x")
+
+picture2=("""     x
+     |
+     |
+     |
+     |
+     | 
+ x---x---x """)
+
+picture3 = ("""      x----x
+      |
+      |
+      |
+      |
+      | 
+ x----x-----x """)
+picture4 = ("""      x----x
+      |    |
+      |    
+      |    
+      |    
+      | 
+ x----x-----x """)
+picture5 = ("""      x----x
+      |    |
+      |    O
+      |    
+      |    
+      | 
+ x----x-----x """)
+
+picture6 = ("""      x----x
+      |    |
+      |    O
+      |   -|-
+      |    
+      | 
+ x----x-----x """)
+picture7 = ("""      x----x
+      |    |   
+      |    O   
+      |   -|-  
+      |   / \  
+      | 
+ x----x-----x   """)
+def print_pic(a):
+    global pic
+    pic=0
+    if a==1:
+        pic=picture1
+    elif a==2:
+        pic=picture2
+    elif a==3:
+        pic=picture3
+    elif a==4:
+        pic=picture4
+    elif a==5:
+        pic=picture5
+    elif a==6:
+        pic=picture6
+    else:
+        pic=picture7
+print("""  _    _                                         
+ | |  | |                                        
+ | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __  
+ |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+ | |  | | (_| | | | | (_| | | | | | | (_| | | | |
+ |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                      __/ |                      
+                     |___/""")
 String = ''
 print("welcome to the hangman game \n \nplayer 1: ")
 while (String == '') or (String.count(" ") == len(String)):
@@ -67,7 +138,8 @@ while (answer.count(",")!=0) and count<10:
             gess = tuple(gess)
             wrong = wrong + gess
             count = count + 1
-            print ("\n\n\nwrong answer:",count,wrong)  
+            print_pic(count)
+            print ("\n\n\nwrong answer:",pic,wrong)  
 
 if (answer.count(",")==0):
     print ("well done \n numbers of wrong answer:",count)   
