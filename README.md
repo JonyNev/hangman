@@ -1,4 +1,5 @@
 # hangman
+
 String = ''
 print("welcome to the hang man game \n \nplayer 1: ")
 while (String == '') or (String.count(" ") == len(String)):
