@@ -1,0 +1,89 @@
+def valid_obj(obj):
+    if len(obj)<3:
+        return False
+    else:
+        for char in obj:
+            if ord(char)<123 and ord(char)>96:
+                continue
+            else:
+                return False
+        return True
+
+FIRST_SHOOPING_LIST = input("enter a list for sopings\nexmple: milk,tometo,eggs,selek\n")
+FIRST_SHOOPING_LIST = FIRST_SHOOPING_LIST.lower()
+list_update = FIRST_SHOOPING_LIST.split(',')
+print(list_update)
+typed_num = 1
+
+
+"""הכנסת מס פקודה תקינה"""
+while typed_num*0 == 0:
+    typed_num = int(input("choose a comend : "))
+
+    if typed_num < 0 or typed_num > 9:
+        print("invalid comend!")
+        continue
+    else:
+
+        if typed_num == 1:
+            for obj in list_update:
+                if valid_obj(obj) == True:
+                    print(obj)
+                else:
+                    continue
+
+        elif typed_num == 2:
+            print("num of objectd: ",len(list_update))
+
+
+        elif typed_num == 3:
+            check_if_in_list = input("enter the object you want to check: ")
+            if check_if_in_list in list_update:
+                print(check_if_in_list, "is insid :)")
+            else:
+                print(check_if_in_list, "isn't insid :(")
+        
+
+        elif typed_num == 4: 
+            check_how_much_in_list = input("enter the object you want to check: ")
+            num_of_times = list_update.count(check_how_much_in_list)
+            print(check_how_much_in_list, "is",num_of_times, "times insid the list.")
+
+        
+        elif typed_num == 5: 
+            want_to_del = input("enter the object you want to del: ")
+            check_if_in_list = want_to_del
+            if check_if_in_list in list_update:
+                list_update.remove(want_to_del)
+                print(list_update)
+            else:
+                print(check_if_in_list, "isn't insid :(")
+        
+
+        elif typed_num == 6:   
+            want_to_add = [input("enter the object you want to add: ")]
+            list_update = list_update + want_to_add
+
+        elif typed_num == 7:
+            for obj in list_update:
+                if valid_obj(obj) == True:
+                    continue
+                else:
+                    print(obj)
+                
+        elif typed_num == 8:
+            count=0
+            for num in range(0,len(list_update)):
+                while list_update.count(list_update[num])>1:
+                    list_update.remove(list_update[num])
+                    list_update.append(count)
+                    count += 1
+            for num in range(count):
+                list_update.remove(num)
+            print(list_update)
+        
+        else: 
+            print("goodbay!")
+            break
+            
+
