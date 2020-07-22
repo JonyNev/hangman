@@ -3,15 +3,11 @@ max__num =int(input("enter max lengnth of the arrow :"))
 space = " "
 def dimond(str_chosen, max__num):
     count=max__num-1
-    num1 = max__num//2-1
     for num in range(1, max__num + 1,2):
-        print(space*(num1)+str_chosen*num)
+        print('{:^220}'.format(str_chosen*num))
         count -= 1
-        num1 -= 1
-        num2 = 1
         while count<max__num//2:
-            print(space*(num2)+str_chosen*(count*2-1))
-            num2 += 1
+            print('{:^220}'.format(str_chosen*(count*2-1)))
             count -= 1
             if count== 0:
                 break
