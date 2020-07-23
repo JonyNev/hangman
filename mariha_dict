@@ -1,0 +1,56 @@
+def key_by_typad_num(typed_num):
+    global dictx
+    if typed_num < 0 or typed_num > 8:
+        return "invalid comend!"
+    else:
+        if typed_num == 1:
+            return dictx['last_name']
+       
+        elif typed_num == 2:
+            return dictx['birth_date'][3:5]
+
+        elif typed_num == 3:
+            return len(dictx['hobbies'])
+
+        elif typed_num == 4: 
+            return dictx['hobbies'][-1]
+       
+        elif typed_num == 5: 
+            dictx['hobbies'].append("Cooking")
+            return dictx['hobbies']
+        
+        elif typed_num == 6:   
+            global count
+            count+=1
+            if count%2==1:
+                dictx['birth_date'] = dictx['birth_date'].split('.')
+                a = dictx['birth_date'][0]
+                b = dictx['birth_date'][-1]
+                dictx['birth_date'][0]= b
+                dictx['birth_date'][-1] = a
+                dictx['birth_date'] = str(dictx['birth_date'])
+                dictx['birth_date'] = dictx['birth_date'].replace(', ','.')
+                dictx['birth_date'] = dictx['birth_date'].replace('[','')
+                dictx['birth_date'] = dictx['birth_date'].replace('\'','')
+                dictx['birth_date'] = dictx['birth_date'].replace(']','')
+                return dictx['birth_date']
+            else:
+                return dictx['birth_date']
+
+        elif typed_num == 7:   
+            if len(dictx) == 4:
+                dictx['age'] = '50'
+                return dictx.items()
+            else:
+                return 'alredy done'
+        
+        else:
+            return "goodbay"
+dictx = {'first_name':'Mariah', 'last_name':'Carey', 'birth_date':'27.03.1970', 'hobbies' : ['Sing', 'Compose', 'Act']}
+count = 0
+while 0 == 0 : 
+    print('list of comends:\n 1: Mariah last name\n 2: Mariah month birth date\n 3: Mariah num of hobbies\n 4: Mariah lest hobbie\n 5: Add cooking for Mariah\'s hobbie ilst\n 6: reverse Mariah\'s birth date \n 7: Add Mariah age for her dict\n 8: exit')
+    typed_num = int(input("enter a comend: "))
+    print("\n", key_by_typad_num(typed_num), "\n---------------------------------------------------------------")
+    if key_by_typad_num(typed_num) == 'goodbay':
+        break 
