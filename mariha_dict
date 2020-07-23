@@ -1,8 +1,9 @@
 def key_by_typad_num(typed_num):
     global dictx
-    if typed_num < 0 or typed_num > 8:
+    if  len(typed_num)!=1:
         return "invalid comend!"
-    else:
+    if 56> ord(typed_num) > 49:
+        typed_num = int(typed_num)
         if typed_num == 1:
             return dictx['last_name']
        
@@ -46,11 +47,13 @@ def key_by_typad_num(typed_num):
         
         else:
             return "goodbay"
+    else:
+        return "invalid comend!"
 dictx = {'first_name':'Mariah', 'last_name':'Carey', 'birth_date':'27.03.1970', 'hobbies' : ['Sing', 'Compose', 'Act']}
 count = 0
 while 0 == 0 : 
     print('list of comends:\n 1: Mariah last name\n 2: Mariah month birth date\n 3: Mariah num of hobbies\n 4: Mariah lest hobbie\n 5: Add cooking for Mariah\'s hobbie ilst\n 6: reverse Mariah\'s birth date \n 7: Add Mariah age for her dict\n 8: exit')
-    typed_num = int(input("enter a comend: "))
+    typed_num = input("enter a comend: ")
     print("\n", key_by_typad_num(typed_num), "\n---------------------------------------------------------------")
     if key_by_typad_num(typed_num) == 'goodbay':
         break 
