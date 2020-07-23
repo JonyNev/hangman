@@ -1,0 +1,36 @@
+the_list = ['deltas', 'retainers', 'desalt', 'pants', 'slated', 'generating', 'ternaries', 'smelters', 'termless', 'salted', 'staled', 'greatening', 'lasted', 'resmelts']
+def mult_tuple(the_list):
+    the_finle_list =[]
+    the_finle_list1 = []
+    for str_in_list1 in the_list:
+        for str_in_list2 in the_list:
+            if str_in_list2!=str_in_list1 and len(str_in_list1)==len(str_in_list2):
+                chack = 0
+                for char in str_in_list1:
+                    if str_in_list1.count(char)==str_in_list2.count(char) and chack==0:
+                        if the_finle_list.count(str_in_list1)==0 and the_finle_list.count(str_in_list2)==0 and the_finle_list != []:
+                            the_finle_list=sorted(the_finle_list) 
+                            if the_finle_list not in the_finle_list1:
+                                the_finle_list1.append(the_finle_list)
+                            the_finle_list =[]
+                        if the_finle_list.count(str_in_list1)==0: 
+                            the_finle_list.append(str_in_list1)
+                        if the_finle_list.count(str_in_list2)==0:    
+                            the_finle_list.append(str_in_list2)
+                  
+                    else:
+                        if str_in_list1.count(char)!=str_in_list2.count(char):
+                            chack = 1
+    chack=0
+    
+    for i in the_finle_list1:
+        print(i)
+    for word in the_list:
+        chack=0
+        for i in range(len(the_finle_list1)):
+            if word in the_finle_list1[i][:]:
+               chack=1
+        if chack == 0:
+               print([word])
+  
+mult_tuple(the_list)
