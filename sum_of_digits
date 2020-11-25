@@ -5,8 +5,7 @@ def add(x, y):
     return z
 
 def sum_of_digits(number):
-    newnumber = map(int, number)
-    print(functools.reduce(add, list(newnumber)))
+    print(functools.reduce(add, list(map(int, number))))
 
 number = input('ENRER A NUMBER')
 number = list(number)    
