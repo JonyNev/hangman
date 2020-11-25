@@ -1,0 +1,14 @@
+import functools
+
+def add(x, y):
+    z = x + y
+    return z
+
+def sum_of_digits(number):
+    newnumber = map(int, number)
+    print(functools.reduce(add, list(newnumber)))
+
+number = input('ENRER A NUMBER')
+number = list(number)    
+
+sum_of_digits(number)
