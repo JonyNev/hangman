@@ -2,13 +2,15 @@ def key_by_typad_num(typed_num):
     global dictx
     if  len(typed_num)!=1:
         return "invalid comend!"
-    if 56> ord(typed_num) > 49:
+    if 57> ord(typed_num) > 48:
         typed_num = int(typed_num)
         if typed_num == 1:
             return dictx['last_name']
        
         elif typed_num == 2:
-            return dictx['birth_date'][3:5]
+            birth_date_str = str(dictx['birth_date'])
+            birth_date_list = birth_date_str.split(".")
+            return birth_date_list[1]
 
         elif typed_num == 3:
             return len(dictx['hobbies'])
